@@ -148,7 +148,7 @@ function parseTags($t){
 			$c.="fck.BasePath='<%echo js_escape(val(\"cfg.fck\"))%>';\n";
 			if ($sk)
 				$c.="fck.Config['SkinPath']=fck.BasePath+'editor/skins/$sk/';\n";
-			$c.="fck.Config['CustomConfigurationsPath']='<%val(\"cfg.rooturl\").val(\"cfg.fckconfig\")%>';
+			$c.="fck.Config['CustomConfigurationsPath']='<%val(\"rooturl\").val(\"cfg.fckconfig\")%>';
 fck.Create();
 //-->
 </script>

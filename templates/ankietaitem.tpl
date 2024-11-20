@@ -1,5 +1,5 @@
 <%if (!val("robot")){%>
-<form name="ankieta" method="post" action="<%val("cfg.rooturl")%>">
+<form name="ankieta" method="post" action="<%val("rooturl")%>">
 <input type="hidden" name="act" value="save"/>
 <input type="hidden" name="id" value="<%val("item.name")%>"/>
 <input class="none" type="text" name="test"/>
@@ -17,7 +17,7 @@
 </t:list>
 <tr><td colspan="2" align="right">
 <input type="submit" value="<%val("txt.save","Save")%>"/>
-<input type="button" value="<%val("txt.cancel","Cancel")%>" onclick="window.location.href='<%val("cfg.rooturl")%>';"/>
+<input type="button" value="<%val("txt.cancel","Cancel")%>" onclick="window.location.href='<%val("rooturl")%>';"/>
 </td></tr></table>
 </fieldset>
 </form>

@@ -3,12 +3,12 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 <%if (val("refresh")>0){%>
-  <meta http-equiv="refresh" content="<%val("refresh")%>;url=<%val("cfg.rooturl")%>" />
+  <meta http-equiv="refresh" content="<%val("refresh")%>;url=<%val("rooturl")%>" />
 <%}%>
   <meta http-equiv="Content-type" content="text/html;charset=<%val("charset")%>" />
   <title><%val("sitetitle")%></title>
-  <link rel="stylesheet" href="style.css" type="text/css" />
-  <script type="text/javascript" src="wwwlib/js/prototype.js"></script>
+  <link rel="stylesheet" href="<%val("rooturl")%>style.css" type="text/css" />
+  <script type="text/javascript" src="<%val("rooturl")%>wwwlib/js/prototype.js"></script>
 </head>
 <body><center>
 <%include("sysmsg.tpl")%>

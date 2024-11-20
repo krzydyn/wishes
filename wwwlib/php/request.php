@@ -108,35 +108,29 @@ class Request{
 		}
 		array_unslash($this->vals["req"]);
 
+		print("_SERVER");
 		print_r($_SERVER);
-		print_r($_POST);
 		unset($_COOKIE);unset($_REQUEST);unset($_GET);unset($_POST);
 
-		//logstr("REQUEST_URI = ".$_SERVER["REQUEST_URI"]);
 		$this->setval("srv",$_SERVER);
 		unset($_SERVER);
+		//usefull shortcuts
 		$this->setval("method",$this->getval("srv.REQUEST_METHOD"));
-		$this->setval("abs-uri",$this->getval("srv.REQUEST_URI"));
+		$this->setval("uri",$this->getval("srv.REQUEST_URI"));
 		$this->setval("remote-addr",$this->getval("srv.REMOTE_ADDR"));
 		$this->setval("remote-port",$this->getval("srv.REMOTE_PORT"));
-
-		$appuri=$this->getval("cfg.rooturl"); //contains trailing slash (/)
-		$appuri=strtr($appuri,array("//"=>"/"));
-		$this->setval("cfg.rooturl",$appuri);
-		$uri = $this->getval("abs-uri");
-		if (strpos($uri,"?")!==false) {
-			$uri=substr($uri,0,strpos($uri,"?"));
+		$script = $this->getval("srv.SCRIPT_FILENAME");
+		$baseurl = "/";
+		if (!empty($script)) {
+			$root = $this->getval("srv.DOCUMENT_ROOT");
+			if (!str_ends_with($root, "/")) $root.="/";
+			if (str_starts_with($script, $root)) {
+				$i = strrpos($script, "/");
+				$baseurl = substr($script, strlen($root)-1, $i-strlen($root)+1)."/";
+			}
 		}
-		if (!empty($appuri)) {
-			//logstr("appuri = '$appuri'   uri = '$uri'");
-			if (strpos($uri,$appuri)===0)
-				$this->setval("uri","/".substr($uri,strlen($appuri)));
-			else
-				$this->setval("uri",$appuri);
-		}
-		else {
-			$this->setval("uri","/");
-		}
+		print("rooturl=$baseurl\n");
+		$this->setval("rooturl", $baseurl);
 
 		if (isset($_FILES)){
 			foreach ($_FILES as $k => $v) {

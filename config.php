@@ -19,8 +19,6 @@ else {
 
 // paths setup
 $config["rootdir"]=strtr(dirname(__FILE__),"\\","/")."/"; //path to the site files
-$config["rooturl"]=dirname($_SERVER["PHP_INFO"]."/")."/"; //url to the site
-if ($config["rooturl"] == "//") $config["rooturl"]="/";
 
 $config["lib"]=$config["rootdir"]."wwwlib/";
 
