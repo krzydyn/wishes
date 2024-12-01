@@ -4,8 +4,16 @@
 .action {width:auto;text-align:left;}
 .xvalue {font-size:13pt;}
 </style>
-<h1>Lista życzeń do św.Mikołaja</h1>
-<h2 style="color:green">&gt;&gt;&gt; należy podać conajmniej 3 konkretne pozycje &lt;&lt;&lt;</h2>
+
+<div class="settings">[
+<%if (val("style")==""){%>
+<a href="?style=dark">dark</a>
+<%}else{%>
+<a href="?style=bright">bright</a>
+<%}%>
+]</div>
+
+<h1>Lista życzeń</h1>
 <table class="db" style="table-layout: fixed;">
 <tr class="head">
 	<th>Imię</th>

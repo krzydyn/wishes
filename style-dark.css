@@ -1,12 +1,15 @@
 * {
 	font-size:inherit;
 	font-family:inherit;
+	color:inherit;
+	background:inherit;
 }
 
 body {
 	font-family:times;
 	font-size: 14pt;
-	background:#aaa;
+	color:rgb(200,200,200);
+	background:rgb(32,33,36); // rgb(28, 30, 33)
 	padding:0;margin:0;}
 h1{font:italic 20pt times;text-align:center;}
 img {margin:0;border:0;}
@@ -15,12 +18,10 @@ a,a:visited,a:focus {text-decoration:none;color:#00C;}
 a:hover {text-decoration:none;color:#3FA;background-color:#777;}
 fieldset{
 	display:inline;
-	background-color:#BBB;
 	border:1px solid grey;
 }
 fieldset>legend{
 	font-weight:bold;
-	background-color:#BBB;
 	border:1px solid grey;
 	border-bottom:0px;
 	padding:1px 5px;
@@ -56,6 +57,8 @@ fieldset>table>tbody>tr>td{
 #dbgmsg{
 	text-align:left;
 }
+input { border:1px solid #555; }
+input:hover { border:1px solid #999; }
 table {margin:0;padding:0;border:none;empty-cells:show;}
 td,th {margin:0;padding:0;border:0;}
 tr.sp>td {background-color:white;padding:2px;}
@@ -68,12 +71,11 @@ td.right {text-align:right;}
 	white-space:nowrap;
 }
 .db>tbody>tr.head{
-	background-color:#C8C8C8;
 }
 .db>tbody>tr.row{cursor:pointer;}
 .db>tbody>tr.row:hover{background-color:#D8D8D8;}
-.db>tbody>tr.row0{background-color:#A8A8A8;}
-.db>tbody>tr.row1{background-color:#B8B8B8;}
+.db>tbody>tr.row0{background-color:rgb(28, 30, 33);}
+.db>tbody>tr.row1{background-color:rgb(48, 50, 53);}
 .db>tbody>tr>* {
 	padding: 2px 5px;
 	border-left:1px solid #555;
@@ -97,6 +99,6 @@ a.icon:hover .bigsample {display:inline;}
 
 div.editor
 {
-	background:#fff;
+	background:#999;
 	border:#696969 solid 1px;
 }
