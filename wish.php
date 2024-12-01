@@ -21,12 +21,13 @@ class App extends Application{
 			$r=$db->tabcreate($t,$v);
 			if ($r===false) {$this->addval("error","DB:".$db->errmsg());return false;}
 		}
-		if ($this->getval("req.style") == "dark") {
-			$this->setval("style", "-dark");
-			setcookie("style", "dark");
+		if ($this->getval("req.theme") == "dark") {
+			$this->setval("theme", "dark");
+			setcookie("theme", "dark");
 		}
 		else {
-			setcookie("style", "", -1);
+			$this->setval("theme", "bright");
+			setcookie("theme", "", -1);
 		}
 	}
 	function process(){

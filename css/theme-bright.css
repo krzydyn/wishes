@@ -1,0 +1,12 @@
+body {
+	color:#333;
+	background:#aaa;
+}
+a,a:visited,a:focus {color:#00C;}
+a:hover {background-color:#777;}
+
+input[type="button"]:hover { background: #777;}
+
+.db>tbody>tr.row:hover{background-color:#D8D8D8;}
+.db>tbody>tr.row0{background-color:#A8A8A8;}
+.db>tbody>tr.row1{background-color:#B8B8B8;}

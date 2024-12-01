@@ -6,10 +6,10 @@
 </style>
 
 <div class="settings">[
-<%if (val("style")==""){%>
-<a href="?style=dark">dark</a>
+<%if (val("theme")=="dark"){%>
+<a href="?theme=bright">bright</a>
 <%}else{%>
-<a href="?style=bright">bright</a>
+<a href="?theme=dark">dark</a>
 <%}%>
 ]</div>
 

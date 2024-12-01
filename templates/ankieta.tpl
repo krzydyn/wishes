@@ -7,7 +7,8 @@
 <%}%>
   <meta http-equiv="Content-type" content="text/html;charset=<%val("charset")%>" />
   <title><%val("sitetitle")%></title>
-  <link rel="stylesheet" href="<%val("rooturl")%>style<%val("style")%>.css" type="text/css" />
+  <link rel="stylesheet" href="<%val("rooturl")%>css/layout.css" type="text/css" />
+  <link rel="stylesheet" href="<%val("rooturl")%>css/theme-<%val("theme")%>.css" type="text/css" />
   <script type="text/javascript" src="<%val("rooturl")%>wwwlib/js/prototype.js"></script>
 </head>
 <body><center>
