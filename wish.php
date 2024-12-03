@@ -31,11 +31,11 @@ class App extends Application{
 		}
 	}
 	function process(){
+		$this->setval("refresh",600);
 		$this->setval("sitetitle","Lista życzeń");
 		parent::process();
 	}
 	function defaultAction(){
-		$this->setval("refresh",3600);
 		$this->listAction();
 	}
 	function editAction(){
@@ -54,6 +54,7 @@ class App extends Application{
 			$item=$r[0];
 		}
 		else $item=array("name"=>"","value"=>"");
+		$this->setval("refresh",0);
 		$this->setval("item",$item);
 		$this->setval("view","ankietaitem");
 	}
@@ -64,7 +65,7 @@ class App extends Application{
 		$this->listAction();
 	}
 	function saveAction(){
-		print("saveAction");
+		$this->setval("refresh",5);
 		$id=$this->getval("req.id");
 		$item=$this->getval("req.item");
 		foreach ($item as $f => $v)
@@ -76,6 +77,7 @@ class App extends Application{
 			return ;
 		}
 		$item["updatetm"]=time();
+		logstr("item=".print_r($item, true));
 		if (empty($id)){
 			$r=$this->db->tabinsert("wishes",$item);
 			if ($r===false) $this->addval("error","DB:".$this->db->errmsg());
@@ -97,8 +99,6 @@ class App extends Application{
 		$this->setval("lastupdate",$tm);
 		$this->setval("items",$items);
 		$this->setval("view","ankietalist");
-		if (($r=$this->getval("refresh"))==null)
-			$this->setval("refresh",60);
 	}
 	function listItems(&$items){
 		$r=$this->db->tabfind("wishes","name,updatetm,value","order by updatetm desc");
