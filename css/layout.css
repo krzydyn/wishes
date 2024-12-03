@@ -14,6 +14,7 @@ img {margin:0;border:0;}
 p {text-align:left;}
 a,a:visited,a:focus,a:hover {text-decoration:none;padding-left:5px;padding-right:5px;}
 fieldset{
+	padding:0;
 	display:inline;
 	border:1px solid grey;
 }
@@ -57,6 +58,12 @@ fieldset>table>tbody>tr>td{
 
 input { border:1px solid #555; }
 input:hover { border:1px solid #999; }
+textarea {
+	width:100%;
+	white-space: pre;
+	overflow-x:scroll;
+	overflow-wrap: normal
+}
 
 table {margin:0;padding:0;border:none;empty-cells:show;}
 td,th {margin:0;padding:0;border:0;}

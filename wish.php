@@ -31,7 +31,7 @@ class App extends Application{
 		}
 	}
 	function process(){
-		$this->setval("sitetitle","Do św Mikołaja");
+		$this->setval("sitetitle","Lista życzeń");
 		parent::process();
 	}
 	function defaultAction(){

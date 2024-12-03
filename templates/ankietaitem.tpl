@@ -5,11 +5,11 @@
 <input class="none" type="text" name="test"/>
 
 <fieldset><legend>Wpisz swoje Imię i życzenia</legend>
-<table>
+<table style="display:inline-block">
 <t:list property="item" id="f" value="v">
-<tr><td><%val("txt.db.ankieta.".$f,$f)%></td><td>
+<tr><td style="width:10%"><%val("txt.db.ankieta.".$f,$f)%></td><td>
 <%if($f=="value"){%>
-<textarea name="item[<%$f%>]" cols="80" rows="13"><%$v%></textarea>
+<textarea name="item[<%$f%>]" rows="10"><%$v%></textarea>
 <%}else{%>
 <input name="item[<%$f%>]" value="<%$v%>">
 <%}%>
