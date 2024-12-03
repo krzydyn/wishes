@@ -5,7 +5,9 @@ body {
 a,a:visited,a:focus {color:#00C;}
 a:hover {background-color:#777;}
 
-input[type="button"]:hover { background: #777;}
+sysmsg{background-color:#aaa;}
+
+input:hover { background: #777;}
 
 .db>tbody>tr.row:hover{background-color:#D8D8D8;}
 .db>tbody>tr.row0{background-color:#A8A8A8;}

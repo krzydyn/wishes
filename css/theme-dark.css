@@ -5,8 +5,9 @@ body {
 a,a:visited,a:focus {color:#0d6efd;}
 a:hover {color:#0d6efd;background-color:#444;}
 
-input[type="button"]:hover { background: #444;}
+input:hover { background: #444;}
 
+.sysmsg{background-color:rgb(32,33,36);}
 .db>tbody>tr.row:hover{background-color:#D8D8D8;}
 .db>tbody>tr.row0{background-color:rgb(28, 30, 33);}
 .db>tbody>tr.row1{background-color:rgb(48, 50, 53);}

@@ -28,7 +28,7 @@ fieldset>table>tbody>tr>td{
 	padding:2px 5px;
 }
 .none {display:none;}
-.abs {position:absolute;left:50%;}
+.abs {position:absolute;left:50%;background:transparent;}
 .abs>div{
 	display:inline;
 	position:relative;
