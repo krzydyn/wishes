@@ -27,9 +27,9 @@
 	<table style="width:100%">
 		<tr>
 		<td class="updatetm">
-			<% $v=$row["updatetm"];$v=$v?date("Y/n/j H:i",$v):""; %>
+			<% $v=$row["updatetm"];$v=$v?date("Y.n.j",$v):""; %>
 			<%if($v){%>
-			(zmieniono o <%$v%>)
+			(zmiana <%$v%>)
 			<%}%>
 		</td>
 		<td class="action">

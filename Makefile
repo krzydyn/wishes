@@ -1,5 +1,4 @@
 install-kamatera:
-	touch .lastinstall
-	scp *.php kamatera:/var/www/html/wishes/
-	scp -r templates/ kamatera:/var/www/html/wishes/
-	scp -r css/ kamatera:/var/www/html/wishes/
+	tar czf wishes.tgz *.php templates css
+	scp wishes.tgz kamatera:
+	ssh kamatera tar xzf ./wishes.tgz --recursive-unlink -C /var/www/html/wishes/
